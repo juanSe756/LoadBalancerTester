@@ -1,0 +1,13 @@
+package com.springproyect.loadbalancertester;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LoadBalancerTesterApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(LoadBalancerTesterApplication.class, args);
+    }
+
+}

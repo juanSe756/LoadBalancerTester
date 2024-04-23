@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Info</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Alexandria', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-family: 'Alexandria', sans-serif;
+            font-size: 2em;
+        }
+        p {
+            font-family: 'Alexandria', sans-serif;
+            font-size: 1.5em;
+        }
+        div {
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Running at</h1>
+    <p>Host IP: <span id="ip-address"></span></p>
+    <p>Hostname: <span id="host-name"></span></p>
+</div>
+
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var responseData = JSON.parse(this.responseText);
+            document.getElementById("ip-address").innerText = responseData.ip;
+            document.getElementById("host-name").innerText = responseData.hostName;
+        }
+    };
+    xhr.open("GET", "/hostinfo", true);
+    xhr.send();
+</script>
+</body>
+</html>
+
+
