@@ -36,16 +36,20 @@
 </div>
 
 <script>
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            var responseData = JSON.parse(this.responseText);
-            document.getElementById("ip-address").innerText = responseData.ip;
-            document.getElementById("host-name").innerText = responseData.hostName;
-        }
-    };
-    xhr.open("GET", "/hostinfo", true);
-    xhr.send();
+    fetch('/hostinfo')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("ip-address").innerText = data.ip;
+            document.getElementById("host-name").innerText = data.hostName;
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
 </script>
 </body>
 </html>
