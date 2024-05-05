@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 @RestController
 public class HostInfoController {
 
-    @GetMapping("/hostinfo")
+    @GetMapping("/host")
     public HostInfo getHostInfo() {
         try {
             InetAddress localhost = InetAddress.getLocalHost();
