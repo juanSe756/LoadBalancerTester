@@ -7,4 +7,4 @@ WORKDIR /home/app
 
 RUN mvn clean package
 WORKDIR /home/app/target
-CMD ["bash", "-c", "java -jar LoadBalancerTester-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Xms512m", "-Xmx1024m", "-jar", "LoadBalancerTester-0.0.1-SNAPSHOT.jar"]
