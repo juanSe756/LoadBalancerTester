@@ -17,7 +17,6 @@ public class ConsumeController {
                 double result = 0;
                 for (int i = 0; i < 1000000; i++) {
                     result += Math.sqrt(Math.pow(Math.random(), 3) + Math.pow(Math.random(), 2));
-                    System.out.println("result: " + result);
                 }
             }
         }).start();
