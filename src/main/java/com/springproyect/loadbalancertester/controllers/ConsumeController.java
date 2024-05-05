@@ -12,6 +12,7 @@ public class ConsumeController {
 
     @GetMapping("/start")
     public String consumeResources() {
+        stop = false;
         new Thread(() -> {
             while (!stop) {
                 double result = 0;
