@@ -1,6 +1,6 @@
 # LoadBalancerTester
 
-Welcome to LoadBalancerTester, a web application developed to test different load balancing algorithms. This tool provides insights into the performance of your system under varying loads, making it ideal for testing load balancers, autoscaling mechanisms, and Kubernetes replication.
+Welcome to LoadBalancerTester, a web application developed to test different load balancing algorithms. This tool provides information like the currently host and ip, it also has endpoints that generate resource consumption on the host and that can be stopped at any time, making it ideal for testing load balancers, autoscaling mechanisms, and Kubernetes replication.
 
 ## Features
 
